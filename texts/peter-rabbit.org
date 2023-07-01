@@ -1,0 +1,15 @@
+#+TITLE: The Tale of Peter Rabbit
+#+AUTHOR: Beatrix Potter
+
+[[./images/peter04.jpg]]
+
+[[./images/peter02.png]]
+
+    Once upon a time there were four little Rabbits, and their names were—
+
+            Flopsy,
+        Mopsy,
+    Cotton-tail,
+and Peter.
+
+[[./images/peter08.jpg]]

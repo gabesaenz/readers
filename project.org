@@ -1,0 +1,44 @@
+* Readers
+** Configure the project
+Move the timestamp directory within the build folder. This prevents issues with file permissions during nix build and also effectively disables timestamps.
+#+BEGIN_SRC emacs-lisp
+(setq org-publish-timestamp-directory "./.org-timestamps/")
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(setq org-publish-project-alist
+      '(("html"
+         :base-directory "./texts/"
+         :base-extension "org"
+         :publishing-directory "./public/"
+         ;; :html-doctype nil ;; this causes an error but probably won't with an actual doctype value
+         ;; :html-extension nil
+         ;; :html-head-extra nil
+         :html-head-include-default-style nil
+         ;; :html-head nil
+         ;; :html-html5-fancy nil
+         ;; :html-preamble nil
+         :html-validation-link nil
+         :html-viewport nil
+         :publishing-function org-html-publish-to-html)
+
+        ("images"
+         :base-directory "./texts/images/"
+         :base-extension any
+         :publishing-directory "./public/images/"
+         :publishing-function org-publish-attachment)
+
+        ("pdf"
+         :base-directory "./texts/"
+         :base-extension "org"
+         :publishing-directory "./public/"
+         :publishing-function org-latex-publish-to-pdf)
+
+        ("website" :components ("html" "images"))))
+#+END_SRC
+
+** Publish the project
+#+BEGIN_SRC emacs-lisp
+(org-publish-project "website")
+(org-publish-project "pdf")
+#+END_SRC
