@@ -1,6 +1,6 @@
 with import <nixpkgs> {};
 
-stdenv.mkDerivation {
+stdenvNoCC.mkDerivation {
   name = "readers";
   src = ./.;
   phases = [
@@ -15,7 +15,7 @@ stdenv.mkDerivation {
     mkdir -p $out
     cp -r ./public/* $out
     mkdir -p $out/debug
-    cp ./texts/*.tex $out/debug
+    cp -r ./texts/* $out/debug
   '';
 
   buildInputs = [
@@ -24,7 +24,7 @@ stdenv.mkDerivation {
     (pkgs.texlive.combine {
       inherit (pkgs.texlive)
         # required
-        plain # "base" package on texlive
+        plain
         graphics
         graphics-cfg
         graphics-def
@@ -53,22 +53,21 @@ stdenv.mkDerivation {
         url
         bitset
         bigintcalc
-        # atbegshi-ltx # in plain
         rerunfilecheck
         uniquecounter
         l3backend
         epstopdf-pkg
         latexconfig
-        # texmf-var # in pdftex
-        # pdftex in schema-infraonly
         cm-super
-        # second run:
-        # scheme-infraonly # contains: mktexlsr, etc. # not enough: missing pdflatex
-        # scheme-minimal # note enough: missing pdflatex
-        scheme-basic # contains: pdflatex
+        latex-bin # contains: pdflatex
+        texlive-scripts
+        ec # default fonts, probably not necessary if other fonts are used
 
         # other
         # texliveonfly # use to see which packages are needed
+        # tlmgr can be used to find which texlive package contains required files
+        # currently, this must be done using an external installation of texlive
+        # for example: tlmgr info what_you're_looking_for
       ;
     })
   ];
