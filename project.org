@@ -8,8 +8,10 @@ Move the timestamp directory within the build folder. This prevents issues with 
 #+BEGIN_SRC emacs-lisp
 (setq org-publish-project-alist
       '(("html"
-         :base-directory "./texts/"
+         :base-directory "."
          :base-extension "org"
+         :exclude "project.org"
+         ;; :recursive t
          :publishing-directory "./public/"
          ;; :html-doctype nil ;; this causes an error but probably won't with an actual doctype value
          ;; :html-extension nil
@@ -23,16 +25,26 @@ Move the timestamp directory within the build folder. This prevents issues with 
          :publishing-function org-html-publish-to-html)
 
         ("images"
-         :base-directory "./texts/images/"
+         :base-directory "./images/"
          :base-extension any
+         :recursive t
          :publishing-directory "./public/images/"
          :publishing-function org-publish-attachment)
 
         ("pdf"
-         :base-directory "./texts/"
+         :base-directory "."
          :base-extension "org"
+         :exclude "project.org"
+         ;; :recursive t
          :publishing-directory "./public/"
          :publishing-function org-latex-publish-to-pdf)
+
+        ("debug"
+         :base-directory "."
+         :base-extension "log\\|tex"
+         ;; :recursive t
+         :publishing-directory "./debug/"
+         :publishing-function org-publish-attachment)
 
         ("website" :components ("html" "images"))))
 #+END_SRC
@@ -41,4 +53,5 @@ Move the timestamp directory within the build folder. This prevents issues with 
 #+BEGIN_SRC emacs-lisp
 (org-publish-project "website")
 (org-publish-project "pdf")
+(org-publish-project "debug")
 #+END_SRC

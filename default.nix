@@ -13,9 +13,12 @@ stdenvNoCC.mkDerivation {
   '';
   installPhase = ''
     mkdir -p $out
-    cp -r ./public/* $out
+    cp -r ./public $out
     mkdir -p $out/debug
-    cp -r ./texts/* $out/debug
+    cp -r ./debug $out/debug
+    # cp -r ./texts/* $out/debug
+    # cp -r *.log $out/debug
+    # cp -r *.tex $out/debug
   '';
 
   buildInputs = [
