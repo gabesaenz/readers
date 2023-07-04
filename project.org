@@ -10,7 +10,7 @@ Move the timestamp directory within the build folder. This prevents issues with 
       '(("html"
          :base-directory "."
          :base-extension "org"
-         :exclude "project.org"
+         :exclude "project.org\\|readme.org"
          ;; :recursive t
          :publishing-directory "./public/"
          ;; :html-doctype nil ;; this causes an error but probably won't with an actual doctype value
@@ -34,7 +34,7 @@ Move the timestamp directory within the build folder. This prevents issues with 
         ("pdf"
          :base-directory "."
          :base-extension "org"
-         :exclude "project.org"
+         :exclude "project.org\\|readme.org"
          ;; :recursive t
          :publishing-directory "./public/"
          :publishing-function org-latex-publish-to-pdf)
