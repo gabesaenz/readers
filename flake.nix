@@ -1,14 +1,16 @@
 {
-  description = "";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    utils.url = "github:numtide/flake-utils";
+  };
 
-  outputs = { self, nixpkgs }: {
-
-    packages.x86_64-darwin.report = (
+  outputs = { self, nixpkgs, utils }:
+    utils.lib.eachSystem utils.lib.allSystems (system:
       let
-        system = "x86_64-darwin";
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs { inherit system; };
       in
-        pkgs.stdenvNoCC.mkDerivation {
+      {
+        defaultPackage = pkgs.stdenvNoCC.mkDerivation {
           name = "readers";
           src = ./.;
           phases = [
@@ -78,8 +80,6 @@
               ;
             })
           ];
-        }
-    );
-    defaultPackage.x86_64-darwin = self.packages.x86_64-darwin.report;
-  };
+        };
+      });
 }
