@@ -17,7 +17,7 @@
             "installPhase"
           ];
           buildPhase = ''
-            emacs --batch -Q --eval '(org-babel-load-file "project.org")'
+            emacs --batch -Q -f toggle-debug-on-error --eval '(org-babel-load-file "project.org")'
           '';
           installPhase = ''
             mkdir -p $out
