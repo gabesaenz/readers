@@ -1,3 +1,4 @@
+#+LATEX_CLASS_OPTIONS: [24pt,a5paper,oneside,parskip=never]
 #+LATEX_HEADER: \usepackage{lettrine}
 
 #+TITLE: The Tale of Peter Rabbit
@@ -34,15 +35,36 @@ BEATRIX POTTER
 \pagebreak
 
 \lettrine[lines=2]{O}{nce} upon a time there were four little Rabbits, and their names were—
-
 #+BEGIN_VERSE
-                Flopsy,
-            Mopsy,
-        Cotton-tail,
-    and Peter.
+				Flopsy,
+			Mopsy,
+		Cotton-tail,
+	and Peter.
 #+END_VERSE
-
 They lived with their Mother in a sand-bank, underneath the root of a very big fir-tree.
+
+\pagebreak
+
+\lettrine[lines=2]{O}{nce} upon a time there were four little Rabbits, and their names were—
+				Flopsy,
+			Mopsy,
+		Cotton-tail,
+	and Peter.
+They lived with their Mother in a sand-bank, underneath the root of a very big fir-tree.
+
+\pagebreak
+
+#+ATTR_LATEX: :options {\textwidth}
+#+BEGIN_minipage
+\lettrine[lines=2]{O}{nce} upon a time there were four little Rabbits, and their names were—
+#+BEGIN_VERSE
+				Flopsy,
+			Mopsy,
+		Cotton-tail,
+	and Peter.
+#+END_VERSE
+They lived with their Mother in a sand-bank, underneath the root of a very big fir-tree.
+#+END_minipage
 
 \pagebreak
 
