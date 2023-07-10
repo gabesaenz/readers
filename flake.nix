@@ -72,8 +72,24 @@
               texlive-scripts
               ec # default fonts, probably not necessary if other fonts are used
 
+              # scrbook class
+              koma-script
+              bookmark # required by scrbook
+
+              # drop caps
+              lettrine
+              xkeyval # required by lettrine
+              minifp # required by lettrine
+              # another package to try:
+              # dropping
+
+              # xelatex latex compiler
+              xetex
+
               # other
-              # texliveonfly # use to see which packages are needed
+              texliveonfly # use to see which packages are needed
+              # Running the build with these flags is also helpful for finding missing package names:
+              # nix build --keep-failed --print-build-logs
               # tlmgr can be used to find which texlive package contains required files
               # currently, this must be done using an external installation of texlive
               # for example: tlmgr info what_you're_looking_for

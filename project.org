@@ -5,6 +5,18 @@ Move the timestamp directory within the build folder. This prevents issues with 
 (setq org-publish-timestamp-directory "./.org-timestamps/")
 #+END_SRC
 
+Register the scrbook koma-script class so it can be used during PDF export.
+#+BEGIN_SRC emacs-lisp
+(with-eval-after-load "ox-latex"
+  (add-to-list 'org-latex-classes
+	     '("scrbook" "\\documentclass{scrbook}"
+	       ("\\part{%s}" . "\\part*{%s}")
+	       ("\\chapter{%s}" . "\\chapter*{%s}")
+	       ("\\section{%s}" . "\\section*{%s}")
+	       ("\\subsection{%s}" . "\\subsection*{%s}")
+	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+#+END_SRC
+
 Define a list of ORG files to exclude from projects.
 #+BEGIN_SRC emacs-lisp
 (defvar exclude-list "project.org\\|readme.org")
@@ -43,6 +55,12 @@ The backquote before the value of org-publish-project-alist enables the use of c
          :exclude ,exclude-list
          ;; :recursive t
          :publishing-directory "./public/"
+         :with-author nil
+         :with-title nil
+         :with-toc nil
+         :with-date nil
+         :latex-class "scrbook"
+         :latex-compiler "xelatex"
          :publishing-function org-latex-publish-to-pdf)
 
         ("debug"
