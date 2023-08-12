@@ -1,0 +1,8 @@
+section {
+    break-after: page;
+    min-height: 90vh;
+}
+
+section.end {
+    break-after: auto;
+}

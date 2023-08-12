@@ -1,0 +1,27 @@
+[book]
+title = "The Tale of Peter Rabbit"
+authors = ["Beatrix Potter"]
+language = "en"
+multilingual = false
+src = "src"
+pagebreak = "page_break_goes_here"
+
+[output.html]
+additional-css = ["src/custom.css", "src/pdf.css"]
+curly-quotes = true
+git-repository-url = "https://github.com/gabesaenz/readers"
+edit-url-template = "https://github.com/gabesaenz/readers/edit/master/guide/{path}"
+
+[output.epub]
+additional-css = ["src/custom.css", "src/epub.css"]
+use-default-css = false
+cover-image = "images/peter04.jpg"
+curly-quotes = false
+
+[output.pdf]
+paper-width = 8
+paper-height = 8
+margin-top = 0.5
+margin-bottom = 0.5
+margin-left = 0.5
+margin-right = 0.5

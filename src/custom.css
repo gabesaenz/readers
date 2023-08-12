@@ -1,0 +1,59 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.title p {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+}
+
+.center p {
+    text-align: center;
+    display: block;
+}
+
+p {
+    text-align: justify;
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    hyphens: none;
+    width: 100%;
+    min-height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+img {
+    display: block;
+    margin: auto;
+    padding: 0;
+}
+
+/* hide sidebar */
+#sidebar {
+    display: none;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+:root {
+  --sidebar-width: 0;
+}
+
+/* hide print button */
+#print-button {
+    display: none;
+}
