@@ -10,7 +10,7 @@ pagebreak = "page_break_goes_here"
 additional-css = ["src/custom.css", "src/pdf.css"]
 curly-quotes = true
 git-repository-url = "https://github.com/gabesaenz/readers"
-edit-url-template = "https://github.com/gabesaenz/readers/edit/master/guide/{path}"
+edit-url-template = "https://github.com/gabesaenz/readers/edit/main/{path}"
 
 [output.epub]
 additional-css = ["src/custom.css", "src/epub.css"]
