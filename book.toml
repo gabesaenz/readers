@@ -18,7 +18,6 @@ cover-image = "images/peter04.jpg"
 curly-quotes = false
 
 [output.pdf]
-trying-times = 5 # fix Github Actions timeout error
 paper-width = 8
 paper-height = 8
 margin-top = 0.5
