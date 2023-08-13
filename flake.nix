@@ -7,7 +7,14 @@
 
   outputs = { self, nixpkgs, utils }:
     utils.lib.eachSystem utils.lib.allSystems (system:
-      let pkgs = import nixpkgs { inherit system; };
+      let
+        pkgs = import nixpkgs { inherit system; };
+        base = with pkgs; [
+          mdbook
+          mdbook-epub # required for [output.epub]
+          mdbook-pdf # required for [output.pdf]
+        ];
+        chrome = with pkgs; [ chromium ];
       in {
         defaultPackage = pkgs.stdenvNoCC.mkDerivation {
           name = "peter-rabbit";
@@ -21,11 +28,8 @@
             cp -r book/* $out
           '';
 
-          buildInputs = with pkgs; [
-            mdbook
-            mdbook-epub # required for [output.epub]
-            mdbook-pdf # required for [output.pdf]
-          ];
+          buildInputs =
+            if system != "x86_64-darwin" then [ base chrome ] else [ base ];
         };
       });
 }
