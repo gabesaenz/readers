@@ -34,7 +34,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - name: Build with nix flakes
-        run: nix build --print-build-logs
+        run: chrome --version && nix build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
