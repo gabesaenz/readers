@@ -27,6 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: browser-actions/setup-chrome@v1
+      - run: echo "{/opt/hostedtoolcache/chromium/latest/x64}" >> $GITHUB_PATH
       - uses: nixbuild/nix-quick-install-action@v25
       - uses: cachix/install-nix-action@v20
         with:
