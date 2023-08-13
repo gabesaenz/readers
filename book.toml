@@ -4,7 +4,6 @@ authors = ["Beatrix Potter"]
 language = "en"
 multilingual = false
 src = "src"
-pagebreak = "page_break_goes_here"
 
 [output.html]
 additional-css = ["src/custom.css", "src/pdf.css"]

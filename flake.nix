@@ -10,7 +10,7 @@
       let pkgs = import nixpkgs { inherit system; };
       in {
         defaultPackage = pkgs.stdenvNoCC.mkDerivation {
-          name = "mdbook-test";
+          name = "peter-rabbit";
           src = ./.;
           phases = [ "unpackPhase" "buildPhase" "installPhase" ];
           buildPhase = ''
