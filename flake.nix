@@ -29,8 +29,8 @@
           '';
 
           buildInputs =
-            # if system != "x86_64-darwin" then [ base chrome ] else [ base ];
-            if system != "x86_64-darwin" then [ base ] else [ base ];
+            if system != "x86_64-darwin" then [ base chrome ] else [ base ];
+          # if system != "x86_64-darwin" then [ base ] else [ base ];
         };
       });
 }
