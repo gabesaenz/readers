@@ -35,7 +35,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - name: Add chrome path to mdbook config
-        run: echo "browser-binary-path = \"/opt/hostedtoolcache/chromium/latest/x64/chrome\"" >> book.toml
+        run: echo "browser-binary-path = \"/opt/hostedtoolcache/chromium/latest/x64\"" >> book.toml
       - name: Build with nix flakes
         run: nix build
       - name: Upload artifact
