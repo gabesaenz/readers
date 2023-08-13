@@ -27,6 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: browser-actions/setup-chrome@v1
+      - name: Get Chrome path and version
+        run: echo Installed chromium version ${{ steps.setup-chrome.outputs.chrome-version }}
+        run: ${{ steps.setup-chrome.outputs.chrome-path }} --version
       - uses: nixbuild/nix-quick-install-action@v25
       - uses: cachix/install-nix-action@v20
         with:
@@ -35,7 +38,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - name: Build with nix flakes
-        run: nix build
+        run: CHROMIUM_BIN=$(which chrome) nix build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
