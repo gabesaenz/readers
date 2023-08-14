@@ -21,7 +21,6 @@
           src = ./.;
           phases = [ "unpackPhase" "buildPhase" "installPhase" ];
           buildPhase = ''
-            alias chrome="chromium"
             mdbook build
           '';
           installPhase = ''
