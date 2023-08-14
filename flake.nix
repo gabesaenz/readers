@@ -21,8 +21,6 @@
           src = ./.;
           phases = [ "unpackPhase" "buildPhase" "installPhase" ];
           buildPhase = ''
-            echo ${which chrome}
-            echo ${which chromium}
             mdbook build
           '';
           installPhase = ''
