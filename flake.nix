@@ -21,7 +21,7 @@
           src = ./.;
           phases = [ "unpackPhase" "buildPhase" "installPhase" ];
           buildPhase = ''
-            chrome --version
+            chromium --version
             mdbook build
           '';
           installPhase = ''
