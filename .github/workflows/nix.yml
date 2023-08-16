@@ -31,7 +31,7 @@ jobs:
       - name: Setup Chrome
         id: setup-chrome
         uses: browser-actions/setup-chrome@v1
-        run: |
+      - run: |
             echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
             ${{ steps.setup-chrome.outputs.chrome-path }} --version
       - name: Setup Pages
