@@ -34,11 +34,7 @@ jobs:
         with:
           chrome-version: stable
       - name: Set CHROME variable
-        run: |
-            echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
-            ${{ steps.setup-chrome.outputs.chrome-path }} --version
-            echo ${{ steps.setup-chrome.outputs.chrome-path }}
-            echo ${{ steps.setup-chrome.outputs.chrome-path }} >> $CHROME
+        run: echo ${{ steps.setup-chrome.outputs.chrome-path }} >> $CHROME
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
