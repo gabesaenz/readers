@@ -35,9 +35,8 @@ jobs:
           chrome-version: stable
       - name: Set CHROME variable
         run: |
-          export CHROME=${{ steps.setup-chrome.outputs.chrome-path }}
-          alias chrome=${{ steps.setup-chrome.outputs.chrome-path }}
-          echo "browser-binary-path = '/opt/hostedtoolcache/chromium/stable/x64'" >> book.toml
+          export CHROME=/opt/hostedtoolcache/chromium/stable/x64
+          alias chrome=/opt/hostedtoolcache/chromium/stable/x64
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
