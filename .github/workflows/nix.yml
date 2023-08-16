@@ -37,6 +37,7 @@ jobs:
         run: |
           export CHROME=${{ steps.setup-chrome.outputs.chrome-path }}
           alias chrome=${{ steps.setup-chrome.outputs.chrome-path }}
+          echo "browser-binary-path = '${{ steps.setup-chrome.outputs.chrome-path }}'" >> book.toml
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
