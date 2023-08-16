@@ -29,10 +29,12 @@
           '';
 
           buildInputs =
-            if system != "x86_64-darwin" && system != "aarch64-darwin" then [
-              base
-              chrome
-            ] else
+            if system != "x86_64-darwin" && system != "aarch64-darwin" then
+              [
+                base
+                # chrome
+              ]
+            else
               [ base ];
         };
       });
