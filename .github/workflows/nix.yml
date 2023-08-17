@@ -35,9 +35,9 @@ jobs:
           chrome-version: stable
       - name: Set CHROME variable
         run: |
-          export CHROME=/opt/hostedtoolcache/chromium/stable/x64/chrome
-          alias chrome=/opt/hostedtoolcache/chromium/stable/x64/chrome
-          echo "browser-binary-path = '/opt/hostedtoolcache/chromium/stable/x64/chrome'" >> book.toml
+          export CHROME=/opt/hostedtoolcache/chromium/stable/x64/chromium
+          alias chrome=/opt/hostedtoolcache/chromium/stable/x64/chromium
+          echo "browser-binary-path = '/opt/hostedtoolcache/chromium/stable/x64/chromium'" >> book.toml
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
