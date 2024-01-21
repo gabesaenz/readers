@@ -4,4 +4,4 @@
 
 [PDF](./pdf/output.pdf)
 
-[EPUB](./epub/The Tale of Peter Rabbit.epub)
+[EPUB](<./epub/The Tale of Peter Rabbit.epub>)
