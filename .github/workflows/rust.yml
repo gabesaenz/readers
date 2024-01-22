@@ -36,7 +36,9 @@ jobs:
           cargo install mdbook-epub
           cargo install mdbook-pdf
       - name: Build
-        run: mdbook build
+        run: |
+          mdbook build
+          ./post-build.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

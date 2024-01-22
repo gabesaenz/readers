@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-cd build
+cd book
 mv html/* ./
-rm html
+rmdir html
 mv pdf/output.pdf ./peter-rabbit.pdf
-rm pdf
+rmdir pdf
 mv "epub/The Tale of Peter Rabbit.epub" ./peter-rabbit.epub
-rm epub
+rmdir epub

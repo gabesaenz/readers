@@ -11,9 +11,6 @@ curly-quotes = true
 git-repository-url = "https://github.com/gabesaenz/readers"
 edit-url-template = "https://github.com/gabesaenz/readers/edit/main/{path}"
 
-[output.html.redirect]
-"../index.html" = "./html/index.html"
-
 [output.epub]
 additional-css = ["src/custom.css", "src/epub.css"]
 use-default-css = false
