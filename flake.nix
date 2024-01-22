@@ -22,6 +22,7 @@
           phases = [ "unpackPhase" "buildPhase" "installPhase" ];
           buildPhase = ''
             mdbook build
+            ./post-build.sh
           '';
           installPhase = ''
             mkdir $out
