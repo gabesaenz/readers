@@ -13,7 +13,7 @@ edit-url-template = "https://github.com/gabesaenz/readers/edit/main/{path}"
 site-url = "/readers/html/"
 
 [output.html.redirect]
-"../index.html" = "/html/index.html"
+"../index.html" = "/readers/html/index.html"
 
 [output.epub]
 additional-css = ["src/custom.css", "src/epub.css"]
